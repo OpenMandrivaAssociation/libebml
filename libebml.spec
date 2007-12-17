@@ -13,7 +13,6 @@ License:        GPL/QPL
 Group:		System/Libraries
 URL:            http://www.matroska.org/
 Source0:        http://dl.matroska.org/downloads/libebml/%name-%version.tar.bz2
-BuildRoot:      %_tmppath/%name-buildroot
 %description
 This library is used for I/O operations in the Extensible Binary Meta
 Language (EBML), which is a kind of binary version of XML.
