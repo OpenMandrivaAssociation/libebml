@@ -1,5 +1,5 @@
 %define name    libebml
-%define version 0.7.7
+%define version 0.7.8
 %define libname %mklibname ebml 0
 %define rel 1
 #fixed2
