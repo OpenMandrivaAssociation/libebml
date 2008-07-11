@@ -1,7 +1,7 @@
 %define name    libebml
 %define version 0.7.8
 %define libname %mklibname ebml 0
-%define rel 1
+%define rel 2
 #fixed2
 %{?!mkrel:%define mkrel(c:) %{-c: 0.%{-c*}.}%{!?_with_unstable:%(perl -e '$_="%{1}";m/(.\*\\D\+)?(\\d+)$/;$rel=${2}-1;re;print "$1$rel";').%{?subrel:%subrel}%{!?subrel:1}.%{?distversion:%distversion}%{?!distversion:%(echo $[%{mdkversion}/10])}}%{?_with_unstable:%{1}}%{?distsuffix:%distsuffix}%{?!distsuffix:mdk}}
 
@@ -13,7 +13,8 @@ License:        GPL/QPL
 Group:		System/Libraries
 URL:            http://www.matroska.org/
 Source0:        http://dl.matroska.org/downloads/libebml/%name-%version.tar.bz2
-BuildRoot:      %_tmppath/%name-buildroot
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
+
 %description
 This library is used for I/O operations in the Extensible Binary Meta
 Language (EBML), which is a kind of binary version of XML.
