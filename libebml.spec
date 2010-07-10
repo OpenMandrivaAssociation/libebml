@@ -1,16 +1,13 @@
 %define name    libebml
-%define version 0.7.8
-%define major 0
+%define version 1.0.0
+%define major 2
 %define libname %mklibname ebml %{major}
 %define develname %mklibname ebml -d
-%define rel 3
-#fixed2
-%{?!mkrel:%define mkrel(c:) %{-c: 0.%{-c*}.}%{!?_with_unstable:%(perl -e '$_="%{1}";m/(.\*\\D\+)?(\\d+)$/;$rel=${2}-1;re;print "$1$rel";').%{?subrel:%subrel}%{!?subrel:1}.%{?distversion:%distversion}%{?!distversion:%(echo $[%{mdkversion}/10])}}%{?_with_unstable:%{1}}%{?distsuffix:%distsuffix}%{?!distsuffix:mdk}}
 
 Summary:        Extensible Binary Meta Language Library
 Name:           %name
 Version:        %version
-Release: %mkrel %rel
+Release: %mkrel 1
 License:        LGPLv2+
 Group:		System/Libraries
 URL:            http://www.matroska.org/
