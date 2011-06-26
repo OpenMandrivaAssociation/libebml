@@ -1,5 +1,5 @@
 %define name    libebml
-%define version 1.2.0
+%define version 1.2.1
 %define major 3
 %define libname %mklibname ebml %{major}
 %define develname %mklibname ebml -d
