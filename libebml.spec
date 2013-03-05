@@ -1,3 +1,5 @@
+%define debug_package %{nil}
+
 %define major	3
 %define libname %mklibname ebml %{major}
 %define devname %mklibname ebml -d
