@@ -1,13 +1,13 @@
 %define debug_package %{nil}
 
-%define major	3
+%define major	4
 %define libname %mklibname ebml %{major}
 %define devname %mklibname ebml -d
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.2.2
-Release:	2
+Version:	1.3.0
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
@@ -39,8 +39,7 @@ for development with EBML.
 %setup -q
 
 %build
-cd make/linux
-%make
+%make -C make/linux
 
 %install
 %makeinstall_std -C make/linux prefix=%{buildroot}%{_prefix} libdir=%{buildroot}%{_libdir}
