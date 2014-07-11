@@ -7,7 +7,7 @@
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
 Version:	1.3.0
-Release:	10
+Release:	11
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
