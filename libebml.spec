@@ -57,3 +57,4 @@ chmod 0755 %{buildroot}%{_libdir}/lib*.so.%{major}*
 %doc LICENSE*
 %{_includedir}/ebml
 %{_libdir}/libebml.so
+%{_libdir}/pkgconfig/*.pc
