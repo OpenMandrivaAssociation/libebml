@@ -1,17 +1,17 @@
 %define debug_package %{nil}
 
-%define major	4
+%define major 4
 %define libname %mklibname ebml %{major}
 %define devname %mklibname ebml -d
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.3.0
-Release:	15
+Version:	1.3.5
+Release:	11
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
-Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.bz2
+Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.xz
 
 %description
 This library is used for I/O operations in the Extensible Binary Meta
@@ -28,8 +28,8 @@ Language (EBML), which is a kind of binary version of XML.
 %package -n %{devname}
 Group:		Development/C++
 Summary:	Extensible Binary Meta Language Library headers and static library
-Provides:	%{name}-devel = %{version}-%{release}
-Requires:	%{libname} = %{version}-%{release}
+Provides:	%{name}-devel = %{EVRD}
+Requires:	%{libname} = %{EVRD}
 
 %description -n %{devname}
 This package contains the C++ headers and the static library needed
@@ -39,6 +39,7 @@ for development with EBML.
 %setup -q
 
 %build
+%setup_compile_flags
 %make -C make/linux
 
 %install
@@ -56,4 +57,3 @@ chmod 0755 %{buildroot}%{_libdir}/lib*.so.%{major}*
 %doc LICENSE*
 %{_includedir}/ebml
 %{_libdir}/libebml.so
-
