@@ -39,11 +39,11 @@ for development with EBML.
 %setup -q
 
 %build
-%setup_compile_flags
-%make -C make/linux
+%configure
+%make
 
 %install
-%makeinstall_std -C make/linux prefix=%{buildroot}%{_prefix} libdir=%{buildroot}%{_libdir}
+%makeinstall_std
 
 rm -f %{buildroot}%{_libdir}/*.a
 
