@@ -6,12 +6,13 @@
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.3.5
-Release:	14
+Version:	1.3.7
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
 Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.xz
+BuildRequires:	cmake
 
 %description
 This library is used for I/O operations in the Extensible Binary Meta
@@ -39,11 +40,13 @@ for development with EBML.
 %setup -q
 
 %build
-%configure
-%make
+%cmake \
+    -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+    -DCMAKE_INSTALL_LIBDIR=%{_lib}
+%make_build
 
 %install
-%makeinstall_std
+%make_install -C build
 
 rm -f %{buildroot}%{_libdir}/*.a
 
@@ -57,4 +60,5 @@ chmod 0755 %{buildroot}%{_libdir}/lib*.so.%{major}*
 %doc LICENSE*
 %{_includedir}/ebml
 %{_libdir}/libebml.so
+%{_libdir}/cmake/ebml/
 %{_libdir}/pkgconfig/*.pc
