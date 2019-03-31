@@ -6,8 +6,8 @@
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.3.5
-Release:	14
+Version:	1.3.7
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
@@ -40,10 +40,10 @@ for development with EBML.
 
 %build
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 rm -f %{buildroot}%{_libdir}/*.a
 
