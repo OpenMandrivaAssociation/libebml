@@ -46,7 +46,7 @@ for development with EBML.
 %make_build
 
 %install
-%make_install
+%make_install -C build
 
 rm -f %{buildroot}%{_libdir}/*.a
 
