@@ -12,6 +12,7 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
 Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.xz
+BuildRequires:	cmake
 
 %description
 This library is used for I/O operations in the Extensible Binary Meta
@@ -39,7 +40,9 @@ for development with EBML.
 %setup -q
 
 %build
-%configure
+%cmake \
+    -DCMAKE_INSTALL_PREFIX=%{_prefix} \
+    -DCMAKE_INSTALL_LIBDIR=%{_lib}
 %make_build
 
 %install
