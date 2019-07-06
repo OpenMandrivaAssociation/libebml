@@ -6,7 +6,7 @@
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.3.7
+Version:	1.3.9
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
@@ -60,5 +60,5 @@ chmod 0755 %{buildroot}%{_libdir}/lib*.so.%{major}*
 %doc LICENSE*
 %{_includedir}/ebml
 %{_libdir}/libebml.so
-%{_libdir}/cmake/ebml/
+%{_libdir}/cmake/EBML/EBML*
 %{_libdir}/pkgconfig/*.pc
