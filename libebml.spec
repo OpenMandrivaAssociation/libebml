@@ -6,7 +6,7 @@
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.3.9
+Version:	1.3.10
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
