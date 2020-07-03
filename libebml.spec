@@ -1,12 +1,12 @@
 %define debug_package %{nil}
 
-%define major 4
+%define major 5
 %define libname %mklibname ebml %{major}
 %define devname %mklibname ebml -d
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.3.10
+Version:	1.4.0
 Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
