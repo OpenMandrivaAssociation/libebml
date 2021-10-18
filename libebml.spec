@@ -1,5 +1,3 @@
-%define debug_package %{nil}
-
 %define major 5
 %define libname %mklibname ebml %{major}
 %define devname %mklibname ebml -d
@@ -7,12 +5,16 @@
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
 Version:	1.4.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
 Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.xz
+Patch0:		https://src.fedoraproject.org/rpms/libebml/raw/rawhide/f/%{name}-use-system-utf8cpp.patch
+# https://github.com/Matroska-Org/libebml/pull/81
+Patch1:		https://src.fedoraproject.org/rpms/libebml/raw/rawhide/f/%{name}-gcc11.patch
 BuildRequires:	cmake
+BuildRequires:	cmake(utf8cpp)
 
 %description
 This library is used for I/O operations in the Extensible Binary Meta
@@ -37,12 +39,14 @@ This package contains the C++ headers and the static library needed
 for development with EBML.
 
 %prep
-%setup -q
+%autosetup -p1
+rm -r src/lib/utf8-cpp
 
 %build
 %cmake \
     -DCMAKE_INSTALL_PREFIX=%{_prefix} \
     -DCMAKE_INSTALL_LIBDIR=%{_lib}
+
 %make_build
 
 %install
