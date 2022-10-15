@@ -4,15 +4,13 @@
 
 Summary:	Extensible Binary Meta Language Library
 Name:		libebml
-Version:	1.4.2
-Release:	2
+Version:	1.4.4
+Release:	1
 License:	LGPLv2+
 Group:		System/Libraries
 Url:		http://www.matroska.org/
 Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.xz
 Patch0:		https://src.fedoraproject.org/rpms/libebml/raw/rawhide/f/%{name}-use-system-utf8cpp.patch
-# https://github.com/Matroska-Org/libebml/pull/81
-Patch1:		https://src.fedoraproject.org/rpms/libebml/raw/rawhide/f/%{name}-gcc11.patch
 BuildRequires:	cmake
 BuildRequires:	cmake(utf8cpp)
 
