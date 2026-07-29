@@ -10,7 +10,6 @@ License:	LGPLv2+
 Group:		System/Libraries
 Url:		https://www.matroska.org/
 Source0:	http://dl.matroska.org/downloads/libebml/%{name}-%{version}.tar.xz
-Patch0:		https://src.fedoraproject.org/rpms/libebml/raw/rawhide/f/%{name}-use-system-utf8cpp.patch
 BuildRequires:	cmake
 BuildRequires:	cmake(utf8cpp)
 
