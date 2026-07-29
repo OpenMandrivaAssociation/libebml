@@ -37,7 +37,6 @@ for development with EBML.
 
 %prep
 %autosetup -p1
-rm -r src/lib/utf8-cpp
 
 %build
 %cmake \
